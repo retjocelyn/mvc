@@ -17,6 +17,8 @@ class User {
     
     private string $adresse;
     
+    private string $wallet;
+    
     
     /**
      * @return int
@@ -114,17 +116,39 @@ class User {
         $this->role = $role;
     }
     
+     /**
+     * @return string adresse
+     */
      public function getAdresse(): string
     {
         return $this->adresse;
     }
     
     /**
-     * @param string $role 
+     * @param string $adresse
      */
     public function setAdresse(string $adresse): void
     {
         $this->adresse = $adresse;
     }
+    
+    
+     /**
+     * @return int $wallet
+     */
+      public function getWallet(): int
+    {
+        return $this->wallet;
+    }
+    
+    /**
+     * @param int $wallet
+     */
+    public function setWallet(string $wallet): void
+    {
+        $this->wallet = $wallet;
+    }
+    
+    
     
 }

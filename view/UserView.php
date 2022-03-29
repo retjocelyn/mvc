@@ -24,6 +24,12 @@ class UserView {
        
     }
     
-    
+    public function displayRegister(): string
+    {
+        $page = new DefaultPage('register');
+        $page->assemblerPage();
+        return $page->getPage();
+       
+    }
     
 }

@@ -52,6 +52,7 @@ class DefaultPage extends AbstractPage {
                 
                 
             case'login':
+            $this->body = str_replace('{%$token%}', $_SESSION['csrf'], $this->body); 
             $this->constructPage();
             break;
             
@@ -59,6 +60,10 @@ class DefaultPage extends AbstractPage {
             $this->constructPage();
             break;
             
+            case'register':
+            $this->body = str_replace('{%$token%}', $_SESSION['csrf'], $this->body);    
+            $this->constructPage();
+            break;
                 
         }
         

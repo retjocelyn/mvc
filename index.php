@@ -33,6 +33,11 @@ switch($url){
         echo($page);  
         break;
         
+    case "registerSecurity":
+        $userController = new UserController();
+        $userController->registerSecurity();
+        break;
+    
     case "register":
         $userController = new UserController();
         $userController->register();
