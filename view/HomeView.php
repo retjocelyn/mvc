@@ -1,6 +1,7 @@
 <?php 
 
 require_once './model/DefaultPage.php';
+require_once './model/ShopPage.php';
 
 
 class HomeView {
@@ -16,4 +17,14 @@ class HomeView {
        
     }
     
+    public function displayShop($categories): string
+    {
+        $page = new ShopPage();
+        $page->setCategories($categories);
+        $page->constructShop();
+        return $page->getPage();
+       
+    }
 }
+
+// notion.

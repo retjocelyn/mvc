@@ -114,7 +114,12 @@ class UserController {
         }
     }
     
-    
+    public function logout() : void
+    {
+        session_destroy();
+        header('location: ./index.php?url=home');
+        exit();
+    }
 }
 
 

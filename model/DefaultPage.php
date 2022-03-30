@@ -72,6 +72,14 @@ class DefaultPage extends AbstractPage {
             $this->constructPage();
             break;
                 
+            case'shop':
+            $this->constructPage();
+            break;    
+                
+            case'category':
+            $this->constructPage();
+            break;       
+                
         }
         
     }

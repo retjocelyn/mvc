@@ -4,6 +4,7 @@ session_start();
 
 require_once './controller/HomeController.php';
 require_once './controller/UserController.php';
+require_once './controller/ProductController.php';
 
 $url = isset($_GET['url']) ? $_GET['url'] : "home"; 
 
@@ -28,11 +29,6 @@ switch($url){
         $userController->loginSecurity();
         break;
     
-    case "shop":
-        $page = searchHtml('magasin');
-        echo($page);  
-        break;
-        
     case "registerSecurity":
         $userController = new UserController();
         $userController->registerSecurity();
@@ -43,19 +39,30 @@ switch($url){
         $userController->register();
         break;
     
-            
     case "account":
         $userController = new UserController();
         $userController->account();
         break;
-                
+        
+    case "logout":
+        $userController = new UserController();
+        $userController->logout();
+        break;        
     
+    case "shop":
+        $homeController = new homeController();
+        $homeController->shop();
+        break;
+        
+    case "instruments":
+        $productController = new ProductController();
+        $productController->shop();
+        break;
+        
     case "basket":
         $page = searchHtml('panier');
         echo($page);
         break;
-        
-        
 }
 
 
