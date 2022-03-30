@@ -9,17 +9,17 @@
                     <div class="showandhide">
                         <section class="showprofil">
                             <ul>
-                                <li>NOM : gringe</li>
-                                <li>Prénom : Roger</li>
-                                <li>Email : Roger@gmail.com</li>
-                                <li>Adresse : location</li>
+                                <li>NOM : {%nom%}</li>
+                                <li>Prénom: {%prenom%}</li>
+                                <li>Email : {%email%}</li>
+                                <li>Domicile : {%adresse%}</li>
                                 <li><input type="button" value="modifier infos"></li><!-- retravailler pour php-->
                             </ul>
                         </section>
                          <section class="showwallet">
                             <article>
                                 <h3>Votre solde</h3>
-                                <p>1000 euros</p>   
+                                <p>{%solde%}</p>   
                                 <form class="argent" action="index.php?url=addargent" method="post">
                                 <input type="text" placeholder="Enter amount" name="montant" required>  <!-- retravailler pour php-->  
                                 <button type="submit">ajouter argent</button>

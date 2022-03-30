@@ -50,9 +50,9 @@ class UserController {
             $user->setPassword($data['password']);
             $user->setRole($data['role']);
             $user->setAdresse($data['adress']);
+            $user->setWallet($data['wallet']);
             
-          
-            $_SESSION['user'] = $user->getlastName();
+            $_SESSION['user'] = serialize($user);
             
             header('location: ./index.php?url=account');
             exit();
@@ -70,8 +70,7 @@ class UserController {
             header('location: ./index.php?url=login');
             exit();
         }
-        
-         echo $this->view->displayAccount($data);
+         echo $this->view->displayAccount();
     }
     
     public function register()

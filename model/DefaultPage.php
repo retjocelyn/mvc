@@ -57,7 +57,14 @@ class DefaultPage extends AbstractPage {
             break;
             
             case'account':
+            $user = unserialize($_SESSION['user']); 
+            $this->body = str_replace('{%nom%}', $user->getlastName(), $this->body);
+            $this->body = str_replace('{%prenom%}', $user->getFirstName(), $this->body);
+            $this->body = str_replace('{%email%}', $user->getEmail(), $this->body);
+            $this->body = str_replace('{%adresse%}', $user->getAdresse(), $this->body);
+            $this->body = str_replace('{%solde%}', $user->getWallet(), $this->body);
             $this->constructPage();
+            
             break;
             
             case'register':
